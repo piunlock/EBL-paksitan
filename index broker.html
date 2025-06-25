@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pi Exchange Brokers - Discover Trading Opportunities</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom font import for 'Inter' */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        /* Define Pi Network inspired colors as CSS variables for easy use */
+        :root {
+            --pi-purple: #724394;
+            --pi-purple-light: #8c54b0;
+            --pi-gold: #f9a11b;
+            --pi-gray-bg: #f3f4f6;
+            --pi-text-dark: #333333;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #724394 ;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            color: var(--pi-text-dark);
+        }
+
+        /* Styling for the message box */
+        #message-box {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #4CAF50; /* Green */
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            pointer-events: none; /* Allows clicks to pass through when hidden */
+            text-align: center;
+            max-width: 90%;
+            width: fit-content;
+        }
+        #message-box.show {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* Custom styles for broker cards and buttons */
+        .broker-card {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            border: 1px solid rgba(114, 67, 148, 0.1); /* Subtle purple border */
+        }
+        .broker-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        .broker-button {
+            background-color: var(--pi-purple);
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+        .broker-button:hover {
+            background-color: var(--pi-purple-light);
+            transform: translateY(-1px);
+        }
+        .broker-button:active {
+            transform: translateY(0);
+            background-color: #54306f; /* Darker purple on click */
+        }
+        
+        /* New Pi logo styling */
+        .pi-main-logo {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Header Section - Removed background color -->
+    <header class="p-4 text-center">
+        <div class="container mx-auto flex items-center justify-center">
+       
+            <!-- Changed text color to purple -->
+            <h1 class="text-2xl sm:text-3xl font-bold tracking-wide text-[var(--pi-purple)]">Pi Exchange Gateway</h1>
+        </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <main class="flex-grow container mx-auto p-4 sm:p-6 lg:p-8">
+        <section class="bg-white p-6 sm:p-8 rounded-xl shadow-lg mb-8">
+            <!-- Big Pi Logo -->
+<img 
+    src="https://i.ibb.co/R8T0PtD/Picsart-25-06-25-13-39-09-473.png" 
+    alt="Pi Main Logo" 
+    style="width: 180px; height: 180px; object-fit: contain;display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto"
+>
+                <path clip-rule="evenodd" d="M263.784 512.009c0-137.08 111.126-248.206 248.206-248.206 137.079 0 248.205 111.126 248.205 248.206 0 137.079-111.126 248.205-248.205 248.205-137.08 0-248.206-111.126-248.206-248.205ZM511.99 218.675c-162.004 0-293.334 131.33-293.334 293.334 0 162.003 131.33 293.333 293.334 293.333 162.003 0 293.333-131.33 293.333-293.333 0-162.004-131.33-293.334-293.333-293.334Zm-75.955 148.073a4.42 4.42 0 0 1 4.426-4.414h42.787a4.42 4.42 0 0 1 4.426 4.414v33.839a4.42 4.42 0 0 1-4.426 4.414h-42.787a4.42 4.42 0 0 1-4.426-4.414v-33.839Zm88.524 0a4.42 4.42 0 0 1 4.426-4.414h42.787a4.42 4.42 0 0 1 4.426 4.414v33.839a4.42 4.42 0 0 1-4.426 4.414h-42.787a4.42 4.42 0 0 1-4.426-4.414v-33.839ZM436.035 674V478.172h-32.836v35.706h-51.261v-35.706c0-28.53 22.95-51.659 51.261-51.659h207.31v-28.868h51.262v28.868c0 28.531-22.951 51.659-51.262 51.659h-34.311v176.006L524.559 674V478.172h-36.885v176.006L436.035 674Z" fill="#f9a11b" fill-rule="evenodd"></path>
+            </img>
+            
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-center mb-4" style="color: #EC9F13;">Discover Your Trading Possibilities</h2>
+
+          <p class="text-center text-gray-600 mb-8 max-w-3xl mx-auto" style="font-size: 11px;">
+    Explore leading cryptocurrency exchanges and their potential for future Pi Network integrations. While direct Pi-to-fiat exchange is in development, connect with these platforms to diversify your crypto portfolio and engage with the wider digital asset market.
+</p>
+
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                <!-- Broker Card Template -->
+                <div class="broker-card bg-gray-50 p-6 rounded-lg shadow-md flex flex-col items-center justify-center text-center transition transform hover:scale-105 hover:shadow-xl">
+                     <img 
+        src="https://i.ibb.co/DPjbkSb8/2197889f8020488480eeaeef0eced58c.png" alt="2197889f8020488480eeaeef0eced58c" border="0" 
+        style="width: 80px; height: 80px; object-fit: contain; margin-bottom: 1rem; border-radius: 8px;"
+    >
+                    <h3 class="text-xl font-semibold text-[var(--pi-purple)] mb-4">Bitget</h3>
+                    <p class="text-gray-500 text-sm mb-6 flex-grow">A leading global cryptocurrency exchange offering diverse trading options and a strong community focus.</p>
+                    <a href="https://www.bitget.com" target="_blank" class="connect-btn broker-button text-white font-bold py-3 px-6 rounded-full shadow-md w-full" data-broker="Bitget">Explore Platform</a>
+                </div>
+
+                <div class="broker-card bg-gray-50 p-6 rounded-lg shadow-md flex flex-col items-center justify-center text-center transition transform hover:scale-105 hover:shadow-xl"><img src="https://i.ibb.co/2YWDGFgL/Logo-OKX.png" alt="Logo-OKX" border="0"
+                style="width: 80px; height: 80px; object-fit: contain; margin-bottom: 1rem; border-radius: 8px;"
+    >
+                    <h3 class="text-xl font-semibold text-[var(--pi-purple)] mb-4">OKX</h3>
+                    <p class="text-gray-500 text-sm mb-6 flex-grow">A top-tier cryptocurrency exchange with a wide range of products, including derivatives, and robust security measures.</p>
+                    <a href="https://www.okx.com" target="_blank" class="connect-btn broker-button text-white font-bold py-3 px-6 rounded-full shadow-md w-full" data-broker="OKX">Explore Platform</a>
+                </div>
+
+                <div class="broker-card bg-gray-50 p-6 rounded-lg shadow-md flex flex-col items-center justify-center text-center transition transform hover:scale-105 hover:shadow-xl">
+                    <img src="https://i.ibb.co/zWyysyPN/mexc-logo.png" alt="mexc-logo" border="0"
+                    style="width: 80px; height: 80px; object-fit: contain; margin-bottom: 1rem; border-radius: 8px;"
+    >
+                    <h3 class="text-xl font-semibold text-[var(--pi-purple)] mb-4">MEXC</h3>
+                    <p class="text-gray-500 text-sm mb-6 flex-grow">An innovative exchange offering spot, margin, and futures trading with a focus on new coin listings and user engagement.</p>
+                    <a href="https://www.mexc.com" target="_blank" class="connect-btn broker-button text-white font-bold py-3 px-6 rounded-full shadow-md w-full" data-broker="MEXC">Explore Platform</a>
+                </div>
+
+                <div class="broker-card bg-gray-50 p-6 rounded-lg shadow-md flex flex-col items-center justify-center text-center transition transform hover:scale-105 hover:shadow-xl">
+                <img src="https://i.ibb.co/xKSF4G7t/gate-io-logo.png" alt="gate-io-logo" border="0"
+                 style="width: 80px; height: 80px; object-fit: contain; margin-bottom: 1rem; border-radius: 8px;"
+    >
+                    <h3 class="text-xl font-semibold text-[var(--pi-purple)] mb-4">Gate.io</h3>
+                    <p class="text-gray-500 text-sm mb-6 flex-grow">A comprehensive platform supporting a vast selection of cryptocurrencies, often favored for its wide altcoin offerings.</p>
+                    <a href="https://www.gate.io" target="_blank" class="connect-btn broker-button text-white font-bold py-3 px-6 rounded-full shadow-md w-full" data-broker="Gate.io">Explore Platform</a>
+                </div>
+
+                <div class="broker-card bg-gray-50 p-6 rounded-lg shadow-md flex flex-col items-center justify-center text-center transition transform hover:scale-105 hover:shadow-xl">
+                    <img src="https://i.ibb.co/LXBBjzfS/1000174296.png" alt="1000174296" border="0"
+                 style="width: 80px; height: 80px; object-fit: contain; margin-bottom: 1rem; border-radius: 8px;"
+    >
+                    <h3 class="text-xl font-semibold text-[var(--pi-purple)] mb-4">LBank</h3>
+                    <p class="text-gray-500 text-sm mb-6 flex-grow">Global digital asset trading platform known for its security, variety of assets, and user-friendly interface.</p>
+                    <a href="https://www.lbank.com" target="_blank" class="connect-btn broker-button text-white font-bold py-3 px-6 rounded-full shadow-md w-full" data-broker="LBank">Explore Platform</a>
+                </div>
+
+                <div class="broker-card bg-gray-50 p-6 rounded-lg shadow-md flex flex-col items-center justify-center text-center transition transform hover:scale-105 hover:shadow-xl">
+                    <img src="https://i.ibb.co/yF4zy6pj/1000174300.webp" alt="1000174300" border="0"
+                 style="width: 80px; height: 80px; object-fit: contain; margin-bottom: 1rem; border-radius: 8px;"
+    >
+                    <h3 class="text-xl font-semibold text-[var(--pi-purple)] mb-4">BitMart</h3>
+                    <p class="text-gray-500 text-sm mb-6 flex-grow">A full-service digital asset exchange with high liquidity, advanced features, and a wide array of trading pairs.</p>
+                    <a href="https://www.bitmart.com" target="_blank" class="connect-btn broker-button text-white font-bold py-3 px-6 rounded-full shadow-md w-full" data-broker="BitMart">Explore Platform</a>
+                </div>
+
+                <div class="broker-card bg-gray-50 p-6 rounded-lg shadow-md flex flex-col items-center justify-center text-center transition transform hover:scale-105 hover:shadow-xl">                    <img src="https://i.ibb.co/xqyC1XPQ/GQbu0y-Fa-IAYe-JGa.png" alt="GQbu0y-Fa-IAYe-JGa" border="0"
+                 style="width: 80px; height: 80px; object-fit: contain; margin-bottom: 1rem; border-radius: 8px;"
+    >
+                    <h3 class="text-xl font-semibold text-[var(--pi-purple)] mb-4">Pionex</h3>
+                    <p class="text-gray-500 text-sm mb-6 flex-grow">The first exchange with built-in trading bots for automated strategies, ideal for advanced traders seeking efficiency.</p>
+                    <a href="https://www.pionex.com" target="_blank" class="connect-btn broker-button text-white font-bold py-3 px-6 rounded-full shadow-md w-full" data-broker="Pionex">Explore Platform</a>
+                </div>
+
+                <div class="broker-card bg-gray-50 p-6 rounded-lg shadow-md flex flex-col items-center justify-center text-center transition transform hover:scale-105 hover:shadow-xl">
+                    <img src="https://i.ibb.co/YKJpYYX/Picsart-25-06-25-12-52-34-832.jpg" alt="Picsart-25-06-25-12-52-34-832" border="0"
+                 style="width: 80px; height: 80px; object-fit: contain; margin-bottom: 1rem; border-radius: 8px;"
+    >
+                    <h3 class="text-xl font-semibold text-[var(--pi-purple)] mb-4">CoinW</h3>
+                    <p class="text-gray-500 text-sm mb-6 flex-grow">A reliable and secure global cryptocurrency trading platform known for its diverse offerings and robust trading engine.</p>
+                    <a href="https://www.coinw.com" target="_blank" class="connect-btn broker-button text-white font-bold py-3 px-6 rounded-full shadow-md w-full" data-broker="CoinW">Explore Platform</a>
+                </div>
+
+                <div class="broker-card bg-gray-50 p-6 rounded-lg shadow-md flex flex-col items-center justify-center text-center transition transform hover:scale-105 hover:shadow-xl">
+                    <img src="https://i.ibb.co/JjH6RyBx/ec99fe992ab0eddcb2d18d5286a95ce9.png" alt="ec99fe992ab0eddcb2d18d5286a95ce9" border="0"
+                 style="width: 80px; height: 80px; object-fit: contain; margin-bottom: 1rem; border-radius: 8px;"
+    >
+                    <h3 class="text-xl font-semibold text-[var(--pi-purple)] mb-4">GCB Exchange</h3>
+                    <p class="text-gray-500 text-sm mb-6 flex-grow">An emerging exchange focusing on secure and efficient crypto trading, with a growing user base and new listings.</p>
+                    <a href="https://www.gcb.com" target="_blank" class="connect-btn broker-button text-white font-bold py-3 px-6 rounded-full shadow-md w-full" data-broker="GCB Exchange">Explore Platform</a>
+                </div>
+
+                <div class="broker-card bg-gray-50 p-6 rounded-lg shadow-md flex flex-col items-center justify-center text-center transition transform hover:scale-105 hover:shadow-xl">
+                    <img src="https://i.ibb.co/21XjqdrF/png-transparent-digifinex-vetor-hd-logo.png" alt="png-transparent-digifinex-vetor-hd-logo" border="0"
+                 style="width: 80px; height: 80px; object-fit: contain; margin-bottom: 1rem; border-radius: 8px;"
+    >
+                    <h3 class="text-xl font-semibold text-[var(--pi-purple)] mb-4">DigiFinex</h3>
+                    <p class="text-gray-500 text-sm mb-6 flex-grow">A global digital asset exchange with a strong focus on user experience, offering a wide array of digital assets.</p>
+                    <a href="https://www.digifinex.com" target="_blank" class="connect-btn broker-button text-white font-bold py-3 px-6 rounded-full shadow-md w-full" data-broker="DigiFinex">Explore Platform</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Important Disclaimer Section -->
+        <section class="bg-yellow-50 border border-yellow-200 rounded-xl p-6 sm:p-8 shadow-lg mb-8">
+            <h3 class="text-xl sm:text-2xl font-bold text-yellow-800 mb-3 flex items-center justify-center sm:justify-start">
+                <svg class="w-7 h-7 mr-3 text-yellow-600" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h2v-2h-2v2zm0-4h2V7h-2v6z"/>
+                </svg>
+                Important Note for Pi Network Users
+            </h3>
+            <p class="text-yellow-700 text-base leading-relaxed">
+                As Pi Network is currently in its Enclosed Mainnet phase, direct listing of Pi on these external exchanges for fiat or other cryptocurrency trading is not yet available. The purpose of connecting with these platforms is to allow Pi users to explore the broader cryptocurrency market, potentially identify opportunities for future integrations, and diversify their digital asset holdings. Always conduct your own research (DYOR) before engaging with any exchange or financial platform.
+            </p>
+        </section>
+    </main>
+
+    <!-- Message Box for notifications (from original brokers.txt) -->
+    <div id="message-box" class="hidden"></div>
+
+    <!-- Footer Section -->
+    <footer class="bg-[var(--pi-purple)] text-white p-4 text-center text-sm mt-auto rounded-t-lg shadow-lg">
+        <div class="container mx-auto">
+            © 2025 Pi Exchange Gateway. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const connectButtons = document.querySelectorAll('.connect-btn');
+            const messageBox = document.getElementById('message-box');
+
+
+            // Add event listeners to each broker's "Explore Platform" button
+            connectButtons.forEach(button => {
+                button.addEventListener('click', (event) => {
+                    const brokerName = event.target.dataset.broker;
+                    showMessage(`Redirecting to ${brokerName}...`);
+                });
+            });
+        });
+    </script>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const connectButtons = document.querySelectorAll('.connect-btn');
+        
+        connectButtons.forEach(button => {
+            button.addEventListener('click', (event) => {
+                event.preventDefault();
+                const brokerUrl = button.getAttribute('href');
+                
+                // Save original button text
+                const originalText = button.innerHTML;
+                
+                // Replace button content with spinner
+                button.innerHTML = `
+                    <div class="inline-block h-5 w-5 animate-spin rounded-full border-2 border-solid border-white border-r-transparent">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                `;
+                
+                // Disable button during redirect
+                button.disabled = true;
+                
+                // Redirect after 2 seconds
+                setTimeout(() => {
+                    window.open(brokerUrl, '_blank');
+                    // Restore button after redirect (in case new tab was blocked)
+                    button.innerHTML = originalText;
+                    button.disabled = false;
+                }, 2000);
+            });
+        });
+    });
+</script>
+    
+</body>
+</html>
